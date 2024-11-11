@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_00/ScaffoldTest.dart';
 import 'package:flutter_00/bubblesort.dart';
 import 'package:flutter_00/login.dart';
 import 'package:flutter_00/product_sort.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       
-      home: BubleSortPage(),
+      home: Scaffoldtest(),
     );
   }
 }
