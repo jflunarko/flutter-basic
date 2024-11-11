@@ -10,6 +10,7 @@ import 'package:flutter_00/checkbox.dart';
 import 'package:flutter_00/checkboxListTitle.dart';
 import 'package:flutter_00/login.dart';
 import 'package:flutter_00/optionAlert.dart';
+import 'package:flutter_00/kasir.dart';
 import 'package:flutter_00/product_sort.dart';
 import 'package:flutter_00/ColumnTest.dart';
 import 'package:flutter_00/RichText.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       
-      home: AlertdialogApp(),
+      home: Kasir(),
     );
   }
 }
