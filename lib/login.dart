@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  // Controllers to retrieve the text input from the TextFields
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -18,18 +27,19 @@ class LoginPage extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                   horizontal: 15, vertical: 8), // Padding minimal di luar
               child: TextField(
+                controller: usernameController,
                 decoration: InputDecoration(
                     labelText: "Username",
                     hintText: "Input Your Username",
                     border: OutlineInputBorder()),
               ),
             ),
-            // SizedBox(height: 10),
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: 15, vertical: 8), // Padding minimal di luar
-
               child: TextField(
+                controller: passwordController,
+                obscureText: true, // Obscure text for password field
                 decoration: InputDecoration(
                     labelText: "Password",
                     hintText: "Input Your Password",
@@ -41,13 +51,32 @@ class LoginPage extends StatelessWidget {
               alignment: Alignment.bottomRight,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blueAccent, // Warna latar belakang tombol
-                  foregroundColor: Colors.white, // Warna teks
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12), // Padding dalam tombol
+                  backgroundColor: Colors.blueAccent, // Background color
+                  foregroundColor: Colors.white, // Text color
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12), // Padding
                 ),
-                onPressed: () {},
                 child: Text("Sign in"),
-                
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text("Pesan Alert"),
+                        content: Text(
+                          "${usernameController.text}\n${passwordController.text}",
+                        ),
+                        actions: [
+                          TextButton(
+                            child: Text('OK'),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
               ),
             )
           ],

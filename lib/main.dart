@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_00/ContainerTest.dart';
+import 'package:flutter_00/RichTextIcon.dart';
+import 'package:flutter_00/RowTest.dart';
 import 'package:flutter_00/ScaffoldTest.dart';
 import 'package:flutter_00/bubblesort.dart';
 import 'package:flutter_00/login.dart';
 import 'package:flutter_00/product_sort.dart';
+import 'package:flutter_00/ColumnTest.dart';
+import 'package:flutter_00/RichText.dart';
 
-void main() {
+void main() {        
   runApp(const MyApp());
 }
 
@@ -17,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       
-      home: Scaffoldtest(),
+      home: LoginPage(),
     );
   }
 }

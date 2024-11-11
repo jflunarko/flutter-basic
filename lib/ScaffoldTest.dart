@@ -33,12 +33,12 @@ class Scaffoldtest extends StatelessWidget {
           children: [
             // Membuat kepala dari Drawer
             UserAccountsDrawerHeader(
-              accountName: Text('Kevin'),
-              accountEmail: Text('kevinbadboyz@gmail.com'),
+              accountName: Text('jonathan'),
+              accountEmail: Text('jonathan@gmail.com'),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.grey,
                 child: Text(
-                  'kevin',
+                  'jonathan',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
